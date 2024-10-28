@@ -14,4 +14,5 @@ metadata:
   {{- end }}
 data:
   {{- include "argo-cd.config.cm" . | trim | nindent 2 }}
+  accounts.alina: apiKey, login
 {{- end }}
