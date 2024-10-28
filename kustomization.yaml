@@ -1,0 +1,13 @@
+# Run kustomize build . | kubectl apply -f -
+# to Delete: kustomize build . | kubectl delete -f - 
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argocd
+
+resources:
+  - install.yaml #from https://github.com/argoproj/argo-cd/blob/release-2.13/manifests/install.yaml
+    #master branch의 install.yaml은 다음과 같은 에러 발생: https://github.com/argoproj/argo-cd/issues/20121
+    #따라서 2.13버전 사용
+  - resources/namespace.yaml
+
+
