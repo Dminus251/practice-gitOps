@@ -4,3 +4,12 @@ metadata:
   name: argocd-rbac-cm
 data:
   policy.default: role:readonly
+  
+  policy.csv: |
+    #p: Policy
+    p, role:user-update, accounts, update, *, allow 
+    p, role:user-update, accounts, get, *, allow
+    p, role:user-update, projects, update, argocd, allow 
+
+    #g: In Case Connect User or Group to Policy
+    g, alina, role:user-update
