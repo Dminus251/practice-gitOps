@@ -4,3 +4,4 @@ metadata:
   name: argocd-cm 
 data: 
   timeout.reconciliation: 300s #reconile 주기 설정
+  account.alina: apiKey, login
