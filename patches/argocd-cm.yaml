@@ -6,3 +6,4 @@ metadata:
 data: 
   timeout.reconciliation: 20s #reconile 주기 설정
   accounts.alina: apiKey,login
+  admin.enabled: "false"
