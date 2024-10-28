@@ -4,6 +4,6 @@ kind: ConfigMap
 metadata: 
   name: argocd-cm 
 data: 
-  timeout.reconciliation: 20s #reconile 주기 설정
+  timeout.reconciliation: 10s #reconile 주기 설정
   accounts.alina: apiKey,login
-  admin.enabled: "false"
+  #admin.enabled: "false"
