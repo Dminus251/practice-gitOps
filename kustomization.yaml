@@ -9,6 +9,7 @@ resources:
 #따라서 2.13버전 사용
 - install.yaml
 - resources/namespace.yaml
+- test.yaml
 patches:
 - path: patches/argocd-cm.yaml
 - path: patches/argocd-server-deployment.yaml
