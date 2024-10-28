@@ -1,10 +1,9 @@
+#이거 default ns에 있어야 함
 apiVersion: v1 
 kind: ConfigMap 
 metadata: 
   name: argocd-cm 
 data: 
   timeout.reconciliation: 300s #reconile 주기 설정
-    #account.alina: apiKey, login
-  account.alina: |
-    enabled: true
-    capabilities: [apiKey, login]
+  accounts.alina: apiKey,login
+    #accounts.alina.enabled: "true"
