@@ -4,14 +4,12 @@ metadata:
   name: argocd-helm
   namespace: argocd
 spec:
-  destination:
+  destination: #매니페스트가 적용되는 위치 = 동기화할 클러스터
     namespace: argocd
-    server: https://kubernetes.default.svc
-  project: default
+    server: https://kubernetes.default.svc #cluster api server의 도메인
+    # 참고: https://stackoverflow.com/questions/54048632/how-does-the-kubernetes-default-svc-routed-to-the-api-server
+  project: default #Argo CD 프로젝트 이름 
   source:
-    repoURL: https://github.com/Dminus251/practice-gitOps #git repo 주소
-    targetRevision: main 
+    repoURL: https://github.com/Dminus251/practice-gitOps #매니페스트가 있는 레포
+    targetRevision: main  #브랜치
     path: argo-cd/ # Helm 차트가 위치한 경로
-    helm:
-      valueFiles:
-        - values.yaml
