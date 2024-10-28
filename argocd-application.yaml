@@ -13,3 +13,7 @@ spec:
     repoURL: https://github.com/Dminus251/practice-gitOps #매니페스트가 있는 레포
     targetRevision: main  #브랜치
     path: argo-cd/ # Helm 차트가 위치한 경로
+  syncPolicy: # 자동 동기화 설정
+    automated:
+      prune: true          # 삭제된 리소스 자동 정리
+      selfHeal: true       # 클러스터와 리포지토리 불일치 시 자동 복구
