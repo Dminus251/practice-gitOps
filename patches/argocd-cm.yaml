@@ -6,4 +6,5 @@ metadata:
 data: 
   timeout.reconciliation: 10s #reconile 주기 설정
   accounts.alina: apiKey,login
+  accounts.gitops-ci: apiKey
   #admin.enabled: "false"
