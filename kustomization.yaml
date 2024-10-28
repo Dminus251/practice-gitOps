@@ -7,9 +7,9 @@ namespace: argocd
 resources:
 #master branch의 install.yaml은 다음과 같은 에러 발생: https://github.com/argoproj/argo-cd/issues/20121
 #따라서 2.13버전 사용
+#여기에 리소스를 추가해야 out of sync로 바뀜
 - install.yaml
 - resources/namespace.yaml
-- test.yaml
 patches:
 - path: patches/argocd-cm.yaml
 - path: patches/argocd-server-deployment.yaml
