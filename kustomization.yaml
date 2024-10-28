@@ -9,5 +9,6 @@ resources:
     #master branch의 install.yaml은 다음과 같은 에러 발생: https://github.com/argoproj/argo-cd/issues/20121
     #따라서 2.13버전 사용
   - resources/namespace.yaml
-
+patchesStrategicMerge:
+  - patches/argocd-cm.yaml
 

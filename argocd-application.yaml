@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: https://github.com/Dminus251/practice-gitOps #매니페스트가 있는 레포
     targetRevision: main  #브랜치
-    path: install.yaml 
+    path: . #루트
 
   syncPolicy: # 자동 동기화 설정
     automated:
