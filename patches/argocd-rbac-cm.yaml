@@ -3,12 +3,19 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  policy.default: role:readonly
+  policy.default: role:readonly #Grant readonly permissions to all users
   
   policy.csv: |
-    #p: Policy
+    # 'user-update' Role has update privileges for all accounts
+    # 'p' means 'Policy'
     p, role:user-update, accounts, update, *, allow 
+
+    
+    # 'user-update' Role has get privileges for all accounts 
     p, role:user-update, accounts, get, *, allow
+
+    
+    # 'user-update' Role has update privileges for 'argocd' project
     p, role:user-update, projects, update, argocd, allow 
 
     #g: In Case Connect User or Group to Policy
