@@ -9,7 +9,7 @@ resources:
 #따라서 2.13버전 사용
 #여기에 리소스를 추가해야 out of sync로 바뀜
 - install.yaml
-- arocd-application.yaml #Application for argo CD (App of Apps)
+- argocd-application.yaml #Application for argo CD (App of Apps)
 - resources/namespace.yaml
 - resources/argo-rollouts.yaml #Application for argo-rollouts
 
