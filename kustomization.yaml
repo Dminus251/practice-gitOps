@@ -10,7 +10,8 @@ resources:
 #여기에 리소스를 추가해야 out of sync로 바뀜
 - install.yaml
 - resources/namespace.yaml
-- argo-rollouts.yaml
+- resources/argo-rollouts.yaml #Application for argo-rollouts
+
 patches:
 - path: patches/argocd-cm.yaml
 - path: patches/argocd-server-deployment.yaml
