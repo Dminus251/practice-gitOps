@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/PacktPublishing/ArgoCD-in-Practice.git
+    repoURL: https://github.com/Dminus251/practice-gitOps
     targetRevision: HEAD
-    path: ch05/applications/argo-rollouts
+    path: argo-rollouts/
 
   destination:
     namespace: argo-rollouts
