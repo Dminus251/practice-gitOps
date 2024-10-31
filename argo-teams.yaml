@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: team
+  namespace: argocd
+spec:
+  destinations: #배포 대상
+  - namespace: team-* #team-으로 시작하는 모든  ns
+    server: '*' #모든 클러스터에 배포 허용
+  clusterResourceWhitelist: #접근 허용 대상
+  - group: ''
+    kind: Namespace
+  namespaceResourceBlacklist: #접근 제한 대상
+  - group: ''
+    kind: ResourceQuota #리소스 할당량 설정 제한
+  - group: ''
+    kind: LimitRange #리소스 제한 범위 설정 제한
+  - group: ''
+    kind: NetworkPolicy #네트워크 정책 설정 제한
+  sourceRepos: #소스 레포지터리들
+  - https://github.com/PacktPublishing/ArgoCD-in-Practice.git
+  - https://github.com/spirosoik/argocd-rollouts-cicd.git
+  
+  roles: 
+  - name: team-admin #role 1: team-admin
+    policies: 
+    - p, proj:team:team-admin, applications, *, team/*, allow
+
+  - name: ci-role ##role 2: ci-role
+    description: Create and Sync apps
+    policies: #team-* ns의 application을 sync, get, create, update delete할 수 있음
+    - p, proj:team:ci-role, applications, sync, team/*, allow
+    - p, proj:team:ci-role, applications, get,  team/*, allow
+    - p, proj:team:ci-role, applications, create, team/*, allow
+    - p, proj:team:ci-role, applications, update, team/*, allow
+    - p, proj:team:ci-role, applications, delete, team/*, allow
